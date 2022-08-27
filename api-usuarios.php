@@ -90,19 +90,6 @@
         }
         echo $result;
         
-    } else if ($postjson['requisicao'] == 'login') {
-
-        $query = $pdo->query("SELECT * from usuarios where usuario = '$postjson[usuario]' and senha = '$postjson[senha]'");
-
-        $res = $query->fetchAll(PDO::FETCH_ASSOC);
-        $linhas = count($res);
-
-        if ($linhas > 0) {
-            $result = json_encode(array('success' => true));
-        } else {
-            $result = json_encode(array('success' => false));
-        }
-        echo $result;
-    }
+    } 
     
 ?>
